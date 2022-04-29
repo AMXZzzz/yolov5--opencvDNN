@@ -116,6 +116,7 @@ class yolov5():
         #  将x的4个锚框从 [x, y, w, h] 转换为 [x1, y1, x2, y2] 其中 xy1=top-left, xy2=bottom-right ，即将原来的中心点和宽高转换成，左上角的点和宽高
         # y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
         y = np.copy(x)  # 拷一份原来的中心点
+        y[:, 0] = x[:, 0] - x[:, 2] / 2  # top left x   计算原点的x
         y[:, 1] = x[:, 1] - x[:, 3] / 2  # top left y   计算原点的y
         y[:, 2] = x[:, 0] + x[:, 2] / 2  # bottom right x
         y[:, 3] = x[:, 1] + x[:, 3] / 2  # bottom right y
