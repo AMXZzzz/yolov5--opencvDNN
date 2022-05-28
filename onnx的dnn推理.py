@@ -235,7 +235,7 @@ if __name__ == '__main__':
         'height': gane_y  # 高度
     }
 
-    cv2.namedWindow('onnx_img', cv2.WINDOW_NORMAL)  # 步骤5.1 指定窗口类型
+    cv2.namedWindow('onnx_img', cv2.WINDOW_NORMAL)  # 指定窗口类型
     while True:
         # 截图加转换 12ms
         start = time.time()
